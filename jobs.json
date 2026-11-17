@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Customer Operations Associate",
+    "company": "Example Customer Co",
+    "remote_spain": true,
+    "senior": false,
+    "clinical": false,
+    "skills": [
+      "crm",
+      "customer support",
+      "documentation"
+    ],
+    "contact": "Published application email"
+  },
+  {
+    "title": "Operations Reporting Assistant",
+    "company": "Example Operations Co",
+    "remote_spain": true,
+    "senior": false,
+    "clinical": false,
+    "skills": [
+      "excel",
+      "reporting",
+      "operations"
+    ],
+    "contact": "Careers page"
+  },
+  {
+    "title": "Clinical Research Manager",
+    "company": "Example Medical Co",
+    "remote_spain": true,
+    "senior": true,
+    "clinical": true,
+    "skills": [
+      "reporting"
+    ],
+    "contact": "General contact"
+  },
+  {
+    "title": "Junior Finance Assistant",
+    "company": "Example Finance Co",
+    "remote_spain": false,
+    "senior": false,
+    "clinical": false,
+    "skills": [
+      "excel",
+      "reconciliation",
+      "reporting"
+    ],
+    "contact": "Careers page"
+  },
+  {
+    "title": "Sales Operations Coordinator",
+    "company": "Example SaaS Co",
+    "remote_spain": true,
+    "senior": false,
+    "clinical": false,
+    "skills": [
+      "crm",
+      "orders",
+      "customer support"
+    ],
+    "contact": "General contact"
+  }
+]
