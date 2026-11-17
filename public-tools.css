@@ -1,0 +1,10 @@
+/* Append once to assets/css/styles.css, or paste in a <style> tag in both homepage <head> elements. */
+.public-tools{padding-block:65px 85px;border-top:1px solid var(--line)}
+.public-tools .project-grid{margin-top:26px}
+.public-tools-card{display:flex;flex-direction:column;gap:0;max-width:680px}
+.public-tools-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:22px 0}
+.public-tools-links .tool-primary-link{display:inline-flex;align-items:center;gap:12px;background:#17675e;color:#fff;text-decoration:none;padding:12px 18px;font-weight:700;font-size:.85rem}
+.public-tools-links .tool-primary-link:hover,.public-tools-links .tool-primary-link:focus-visible{background:#104b45}
+.public-tools-links a::after{display:none!important}
+.public-tools .card-bottom{margin-top:auto}
+@media(max-width:760px){.public-tools{padding-block:40px 55px}.public-tools-links{align-items:stretch;flex-direction:column}.public-tools-links .tool-primary-link{justify-content:center}}
