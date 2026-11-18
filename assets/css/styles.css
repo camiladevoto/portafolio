@@ -4,3 +4,34 @@
 @media(max-width:1000px){.container{width:calc(100% - 56px)}.hero{gap:35px;padding-block:65px}.brand-name{display:none}#site-nav{gap:22px}.focus-panel{padding:25px}.project-card{padding:20px}.approach{gap:35px}}
 @media(max-width:760px){.container{width:calc(100% - 40px)}.header-inner{min-height:82px;flex-wrap:wrap;gap:0;padding-block:15px}.brand-name{display:block;font-size:.73rem}.brand-name>span{font-size:.48rem}.monogram{font-size:2rem}#site-nav{width:100%;flex-wrap:wrap;gap:12px 22px;padding-top:15px}#site-nav.collapsible{display:none}.menu-toggle[aria-expanded=true]+#site-nav.collapsible{display:flex}.hero{grid-template-columns:1fr;padding-block:50px;gap:40px}h1{font-size:clamp(2.6rem,8vw,3.7rem)}.hero-description{font-size:.95rem}.actions{gap:20px;flex-wrap:wrap}.location{margin-top:28px}.focus-panel{padding:25px}.focus-item{padding:19px 0}.panel-note{font-size:1.25rem}.work-section{padding-block:45px}.section-heading{align-items:start;flex-direction:column;gap:18px}.project-grid{grid-template-columns:1fr}.project-card{min-height:275px;padding:26px}.card-top{margin-bottom:25px}.approach{grid-template-columns:1fr;gap:8px;padding-block:50px}.contact-band{flex-direction:column;align-items:start;padding:28px;margin-bottom:50px}.footer-inner{align-items:start}.copyright{width:100%}.page-hero{padding-block:50px 25px}.placeholder-panel{padding:26px}.placeholder-wrap,.projects-page{padding-bottom:55px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+.diagonal-arrow {
+  display: inline-block;
+  position: relative;
+  width: 0.8em;
+  height: 0.8em;
+  color: inherit;
+}
+
+.diagonal-arrow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.4em;
+  height: 0.4em;
+  border-top: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+}
+
+.diagonal-arrow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1em;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right center;
+  transform: rotate(-45deg);
+}
