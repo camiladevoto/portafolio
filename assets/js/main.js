@@ -59,6 +59,8 @@ if (focusItems.length) {
   };
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', schedule);
-  motion.addEventListener('change', schedule);
+  motion.addEventListener?.('change', schedule);
+  window.addEventListener('pageshow', schedule);
+  document.fonts?.ready.then(schedule);
   refresh();
 }
