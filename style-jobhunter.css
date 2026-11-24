@@ -32,3 +32,11 @@ body { background: #0b1b2d; color: #f7faff; }
 .wrap > .section .note { background: #263f58; color: #f7faff; }
 .wrap > .section a { color: var(--teal); }
 .wrap > footer { color: #c3d1df; }
+
+.case-puzzle .case-tile .grid {grid-template-columns:minmax(0,1fr);}
+.case-puzzle .case-tile .card {background:#263f58;color:#f7faff;padding:1.25rem;}
+.case-puzzle .case-tile .note {background:#263f58;color:#f7faff;}
+@media(min-width:761px){
+  .case-puzzle > .case-tile:is(#real-life-application,#aplicacion-practica,#demo) {grid-column:1/-1;}
+  .case-puzzle > .section.case-tile:last-child {grid-column:auto;}
+}
