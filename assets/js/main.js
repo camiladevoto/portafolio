@@ -72,6 +72,7 @@ if (careerCarousel) {
   const controls = careerCarousel.querySelector('.carousel-controls');
   const buttons = [...controls.querySelectorAll('button')];
   const position = controls.querySelector('.carousel-position');
+  const progress = controls.querySelector('.carousel-progress');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   const startOf = (slide) => slide.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft;
   const limit = () => Math.max(0, track.scrollWidth - track.clientWidth);
@@ -83,7 +84,12 @@ if (careerCarousel) {
   };
   const update = () => {
     const index = nearestSlide();
-    position.textContent = `${index + 1} / ${slides.length}`;
+    const count = String(index + 1).padStart(2, '0');
+    position.textContent = `${count} / ${slides.length}`;
+    if (progress) {
+      progress.max = slides.length;
+      progress.value = index + 1;
+    }
     buttons[0].disabled = track.scrollLeft <= 2;
     buttons[1].disabled = track.scrollLeft >= limit() - 2;
   };
