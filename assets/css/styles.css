@@ -99,25 +99,3 @@ h2 { font-weight: 750; }
   .hero { grid-template-columns: minmax(0, 1fr); }
   .focus-panel { margin-right: 7px; }
 }
-
-@keyframes portfolio-rise {
-  0% { opacity: 0; transform: translateY(28px) scale(.92); }
-  75% { opacity: 1; transform: translateY(-3px) scale(1.012); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero h1, .page-hero h1 {
-    animation: portfolio-rise 780ms cubic-bezier(.2, .75, .25, 1) 120ms both;
-    transform-origin: left center;
-  }
-  .hero h1 em {
-    display: inline-block;
-    animation: portfolio-rise 780ms cubic-bezier(.2, .75, .25, 1) 340ms both;
-    transform-origin: left center;
-  }
-  .section-heading h2.is-revealed, .project-card h3.is-revealed, .evidence-section h2.is-revealed {
-    animation: portfolio-rise 680ms cubic-bezier(.2, .75, .25, 1) both;
-    transform-origin: left center;
-  }
-}
