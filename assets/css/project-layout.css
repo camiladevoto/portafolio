@@ -20,7 +20,7 @@
 .case-tile:nth-child(2n) {--piece-x:1.4rem;}
 @media(max-width:760px){.case-overview,.case-puzzle{grid-template-columns:minmax(0,1fr);}}
 @media(prefers-reduced-motion:no-preference){
- .case-piece.is-assembling {animation:case-assemble .32s cubic-bezier(.14,.82,.24,1) both;}
+ .case-piece.is-assembling {animation:case-assemble .78s cubic-bezier(.14,.82,.24,1) both;}
  @keyframes case-assemble {from{opacity:0;transform:translate(var(--piece-x,-1.4rem),.75rem)}to{opacity:1;transform:none}}
 }
 
@@ -37,13 +37,13 @@
 .case-puzzle {align-items:stretch;}
 .case-tile:nth-child(-n+2) {border-block-start:4px solid #ffac72;--piece-x:clamp(3rem,15vw,11rem);--piece-turn:4deg;}
 .case-tile:first-child {--piece-x:clamp(-11rem,-15vw,-3rem);--piece-turn:-4deg;}
-.case-tile:nth-child(2) {--piece-delay:.07s;}
+.case-tile:nth-child(2) {--piece-delay:.16s;}
 @media(max-width:760px){.case-overview{grid-template-columns:minmax(0,1fr);}}
 @media(prefers-reduced-motion:no-preference){
  .overview-slot > .case-piece {transition:opacity .20s ease,transform .25s cubic-bezier(.18,.84,.25,1);}
  .overview-slot[data-phase="waiting"] > .case-piece {opacity:0;transform:translateX(-2.6rem);}
  .overview-slot[data-phase="passed"] > .case-piece {opacity:0;transform:translateX(2.6rem);}
- .case-tile:nth-child(-n+2).is-assembling {animation:case-lock .56s cubic-bezier(.18,.83,.25,1) var(--piece-delay,0s) both;}
+ .case-tile:nth-child(-n+2).is-assembling {animation:case-lock 1.05s cubic-bezier(.18,.83,.25,1) var(--piece-delay,0s) both;}
  @keyframes case-lock {
    from {opacity:0;transform:translate(var(--piece-x),2rem) rotate(var(--piece-turn));}
    82% {opacity:1;transform:translateY(-.15rem);}
