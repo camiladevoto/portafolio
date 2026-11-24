@@ -252,8 +252,7 @@ body > .wrap > .hero { display: block; }
 .opening-screen {
   background: linear-gradient(145deg, #11253b 55%, #214b73);
   color: #fff;
-  box-shadow: 0 0 0 100vmax #11253b;
-  clip-path: inset(0 -100vmax);
+
 }
 .opening-screen h1 em, .opening-link { color: #ffac72; }
 .opening-link { border-color: currentColor; }
@@ -413,7 +412,7 @@ body {
 .site-header { color: #f7faff; }
 .brand-name, #site-nav a { color: inherit; }
 .site-footer a:hover, #site-nav a:hover { color: var(--teal); }
-.opening-screen { box-shadow: 0 0 0 100vmax var(--deep-navy); }
+
 .page-hero, body > .wrap > .hero { border-bottom: 1px solid var(--line); }
 .work-section:not(#toolsbyme) { background: var(--deep-navy); }
 .project-card, .experience-history .timeline-card, .timeline-extra {
@@ -496,3 +495,14 @@ main:has(.project-end) :is(.placeholder-panel,.operations-article,.case,.evidenc
 }
 main:has(.project-end) :is(.operations-article,.case,.evidence-box,.placeholder-panel,.original-artwork) :is(h2,h3,strong){color:inherit}
 @media(max-width:650px){.profile-grid{grid-template-columns:1fr}}
+
+/* Let the opening gradient reach the viewport edges. */
+.opening-screen {
+  padding-inline: max(clamp(1.25rem, 6vw, 7rem), calc((100% - 90rem) / 2));
+}
+.opening-screen h1 {
+  font-size: clamp(2.8rem, 8vw, 8.5rem);
+}
+@media (max-width: 760px) {
+  .opening-screen h1 { font-size: clamp(2.65rem, 10vw, 5.2rem); }
+}
