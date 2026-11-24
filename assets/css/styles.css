@@ -281,7 +281,11 @@ body > .wrap > .hero { display: block; }
 .focus-section .focus-item h2 { font-size: clamp(1.1rem, 2.6vw, 1.6rem); }
 @media (prefers-reduced-motion: no-preference) {
   .focus-section .focus-item { transition: opacity .32s ease, transform .42s ease; }
-  .focus-section .focus-item.is-pending { opacity: 0; transform: translateY(1.5rem); }
+  .focus-section .focus-item.is-pending { opacity: 0; transform: translateY(1rem); }
+  .focus-section .focus-item > span,
+  .focus-section .focus-item > div { transition: transform .42s cubic-bezier(.2, .75, .25, 1); }
+  .focus-section .focus-item.is-pending > span { transform: translateX(-1.75rem); }
+  .focus-section .focus-item.is-pending > div { transform: translateX(-.65rem); }
 }
 
 .home-timeline { padding-top: clamp(3rem, 7vw, 6rem); }
@@ -365,4 +369,31 @@ body > .wrap > .hero { display: block; }
 }
 @media (max-width: 480px) {
   .carousel-controls:not([hidden]) { justify-content: flex-start; }
+}
+
+/* Shared page mastheads carry the homepage palette into the case studies. */
+.page-hero, body > .wrap > .hero {
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 0 0 100vmax var(--navy);
+  clip-path: inset(0 -100vmax);
+  margin-bottom: clamp(1.75rem, 4vw, 3.5rem);
+}
+.page-hero .eyebrow, .page-hero h1 em,
+body > .wrap > .hero .eyebrow { color: var(--accent); }
+.page-hero p:not(.eyebrow), body > .wrap > .hero .lead,
+body > .wrap > .hero .small { color: #e6edf5; }
+.page-hero a, body > .wrap > .hero a { color: var(--accent); }
+.timeline-entry:nth-child(3n + 1) .timeline-card {
+  border-inline-start: 4px solid var(--accent);
+}
+.carousel-progress { appearance: none; background: #ffffff35; border: 0; border-radius: 999px; }
+.carousel-progress::-webkit-progress-bar { background: #ffffff35; border-radius: 999px; }
+.carousel-progress::-webkit-progress-value { background: var(--accent); border-radius: 999px; }
+.carousel-progress::-moz-progress-bar { background: var(--accent); border-radius: 999px; }
+@media (prefers-reduced-motion: no-preference) {
+  .carousel-progress::-webkit-progress-value { transition: width .24s ease-out; }
+  #toolsbyme a.project-card .diagonal-arrow { transition: transform .2s ease-out; }
+  #toolsbyme a.project-card:is(:hover, :focus-visible) .diagonal-arrow { transform: translate(3px, -3px); }
+  #toolsbyme a.project-card:focus-visible { transform: translateY(-4px); }
 }
