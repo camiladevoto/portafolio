@@ -43,10 +43,13 @@ if (focusItems.length) {
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const revealLine = () => window.innerHeight * 0.8;
   // Use layout offsets so the sliding transform does not move its own trigger.
-  const refresh = () => {
+  const refresh = (initial = false) => {
     const cutoff = window.scrollY + revealLine();
     const panelTop = focusItems[0].offsetParent.getBoundingClientRect().top + window.scrollY;
-    focusItems.forEach(item => item.classList.toggle('is-pending', !motion.matches && panelTop + item.offsetTop > cutoff));
+    focusItems.forEach((item) => {
+      const buffer = initial ? 0 : item.classList.contains('is-pending') ? -12 : 12;
+      item.classList.toggle('is-pending', !motion.matches && panelTop + item.offsetTop > cutoff + buffer);
+    });
   };
   let scheduled = false;
   const schedule = () => {
@@ -62,7 +65,7 @@ if (focusItems.length) {
   motion.addEventListener?.('change', schedule);
   window.addEventListener('pageshow', schedule);
   document.fonts?.ready.then(schedule);
-  refresh();
+  refresh(true);
 }
 
 const careerCarousel = document.querySelector('.career-carousel');
