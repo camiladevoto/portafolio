@@ -18,3 +18,17 @@ input[type=range]{accent-color:var(--teal);width:260px;max-width:100%}.btn{displ
 body { font-family: 'Trebuchet MS', Arial, sans-serif; background: #f8f7f3; color: var(--navy); }
 .hero, .section, .card { border-radius: 20px; }
 .btn { border-radius: 999px; }
+
+body { background: #0b1b2d; color: #f7faff; }
+.wrap > .section {
+  --line: #405973;
+  --muted: #c3d1df;
+  --teal: #ff9b54;
+  --panel: #172f48;
+  background: #11253b;
+  border-color: var(--line);
+  color: #f7faff;
+}
+.wrap > .section .note { background: #263f58; color: #f7faff; }
+.wrap > .section a { color: var(--teal); }
+.wrap > footer { color: #c3d1df; }
