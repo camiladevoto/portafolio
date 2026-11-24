@@ -506,3 +506,10 @@ main:has(.project-end) :is(.operations-article,.case,.evidence-box,.placeholder-
 @media (max-width: 760px) {
   .opening-screen h1 { font-size: clamp(2.65rem, 10vw, 5.2rem); }
 }
+
+html[lang="es"] .opening-screen h1 {
+  font-size: clamp(2.8rem, 10.5vw, 9.5rem);
+}
+@media (max-width: 760px) {
+  html[lang="es"] .opening-screen h1 { font-size: clamp(2.8rem, 12vw, 5.7rem); }
+}
