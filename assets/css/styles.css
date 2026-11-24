@@ -293,3 +293,32 @@ body > .wrap > .hero { display: block; }
   #site-nav .projects-nav { position: relative; }
   #site-nav .project-menu { left: auto; right: 0; }
 }
+
+.carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(85%, 42rem);
+  gap: 1rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  padding: .75rem 0 1rem;
+  margin: 0;
+  list-style: none;
+}
+.career-slide { scroll-snap-align: start; display: flex; flex-direction: column; }
+.career-slide:last-child { scroll-snap-align: end; }
+.career-slide .timeline-card { flex: 1; }
+.career-slide .timeline-date { padding: 0; margin: 0 0 .5rem; }
+.carousel-controls:not([hidden]) { display: flex; align-items: center; gap: .75rem; }
+.carousel-controls button {
+  min-height: 44px;
+  padding: .45rem .9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--navy);
+  cursor: pointer;
+}
+.carousel-controls button:disabled { opacity: .55; cursor: default; }
+.carousel-position { color: var(--muted); font-variant-numeric: tabular-nums; }
