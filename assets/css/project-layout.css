@@ -16,7 +16,6 @@
 .case-toolkit dt,.case-toolkit dd {color:#11253b;}
 .case-tile h2 {display:flex;align-items:baseline;gap:.7rem;}
 .piece-number {color:#ffac72;font-size:.72em;font-variant-numeric:tabular-nums;}
-.case-tile:nth-child(n+3) {grid-column:1/-1;}
 .case-tile:nth-child(2n) {--piece-x:1.4rem;}
 @media(max-width:760px){.case-overview,.case-puzzle{grid-template-columns:minmax(0,1fr);}}
 @media(prefers-reduced-motion:no-preference){
@@ -96,7 +95,7 @@ body{overflow-x:clip}
 @media(min-width:761px){
   .case-puzzle {grid-template-columns:repeat(2,minmax(0,1fr));}
   .case-puzzle .case-tile:nth-child(n) {grid-column:auto;margin:0;}
-  .case-puzzle .case-tile:last-child {grid-column:1/-1;}
+  .case-puzzle > .case-tile:last-child:nth-child(odd) {grid-column:1/-1;}
 }
 
 .case-assembly .case-piece {box-sizing:border-box}
@@ -109,3 +108,6 @@ body{overflow-x:clip}
 .case-marquee .marquee-track:not(.is-ready) [aria-hidden] {display:none;}
 .case-overview.has-marquee .marquee-track:not(.is-ready) {animation:none;}
 .case-assembly .section.case-tile {margin:0;}
+
+/* Evidence remains full width below the case cards. */
+main:has(.case-assembly) :is(.evidence-box, .original-artwork) {border-block-start:4px solid #ffac72;}
