@@ -18,10 +18,3 @@ input[type=range]{accent-color:var(--teal);width:260px;max-width:100%}.btn{displ
 body { font-family: 'Trebuchet MS', Arial, sans-serif; background: #f7f3ff; color: var(--navy); }
 .hero, .section, .card { border-radius: 20px; }
 .btn { border-radius: 999px; }
-@media (prefers-reduced-motion: no-preference) {
-  .hero h1 { animation: job-hunter-rise 550ms ease-out both; }
-}
-@keyframes job-hunter-rise {
-  from { opacity: 0; transform: translateY(.65em); }
-  to { opacity: 1; transform: translateY(0); }
-}
