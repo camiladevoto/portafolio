@@ -20,17 +20,3 @@ if (toggle && nav) {
 document.querySelectorAll('[data-year]').forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
-
-// Animate headings as they enter the viewport. Content stays visible without JS.
-if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const reveal = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-revealed');
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.2 });
-  document.querySelectorAll('.section-heading h2, .project-card h3, .evidence-section h2').forEach((heading) => {
-    reveal.observe(heading);
-  });
-}
