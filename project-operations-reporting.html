@@ -93,7 +93,7 @@
   const refresh = () => {
     frame = 0;
     const header = document.querySelector('.site-header');
-    const exitLine = Math.max(innerHeight * .15, header?.getBoundingClientRect().bottom ?? 0);
+    const exitLine = Math.max(innerHeight * .22, (header?.getBoundingClientRect().bottom ?? 0) + 48);
     for (const slot of slots) {
       const bounds = slot.getBoundingClientRect();
       slot.dataset.phase = bounds.bottom <= exitLine ? 'passed' : bounds.top >= innerHeight * .88 ? 'waiting' : 'visible';
