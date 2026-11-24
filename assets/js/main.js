@@ -3,7 +3,9 @@ const projectsNav = document.querySelector('.projects-nav');
 if (projectsNav) {
   const trigger = projectsNav.querySelector('.projects-toggle');
   const menu = projectsNav.querySelector('.project-menu');
+  let closeTimer;
   const setOpen = (open) => {
+    clearTimeout(closeTimer);
     trigger.setAttribute('aria-expanded', String(open));
     menu.hidden = !open;
   };
@@ -14,8 +16,11 @@ if (projectsNav) {
     if (event.pointerType === 'mouse') setOpen(true);
   });
   projectsNav.addEventListener('pointerleave', (event) => {
-    if (event.pointerType === 'mouse' && !menu.contains(document.activeElement)) setOpen(false);
+    if (event.pointerType === 'mouse' && !menu.contains(document.activeElement)) {
+      closeTimer = setTimeout(() => setOpen(false), 280);
+    }
   });
+  menu.addEventListener('pointerenter', () => clearTimeout(closeTimer));
   projectsNav.addEventListener('focusout', (event) => {
     if (!projectsNav.contains(event.relatedTarget)) setOpen(false);
   });

@@ -283,3 +283,13 @@ body > .wrap > .hero { display: block; }
   .focus-section .focus-item { transition: opacity .32s ease, transform .42s ease; }
   .focus-section .focus-item.is-pending { opacity: 0; transform: translateY(1.5rem); }
 }
+
+.home-timeline { padding-top: clamp(3rem, 7vw, 6rem); }
+.home-timeline .experience-timeline { margin-bottom: 0; }
+.timeline-card h3 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin-bottom: .4rem; font-weight: 750; }
+
+/* Keep the dropdown within the Projects hit area at wrapped menu widths. */
+@media (max-width: 760px) and (hover: hover) {
+  #site-nav .projects-nav { position: relative; }
+  #site-nav .project-menu { left: auto; right: 0; }
+}
