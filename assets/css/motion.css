@@ -14,8 +14,4 @@
     animation: portfolio-rise 780ms cubic-bezier(.2, .75, .25, 1) 340ms both;
     transform-origin: left center;
   }
-  .is-revealed {
-    animation: portfolio-rise 680ms cubic-bezier(.2, .75, .25, 1) both;
-    transform-origin: left center;
-  }
 }
