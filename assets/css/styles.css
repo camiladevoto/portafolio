@@ -476,3 +476,23 @@ body:has(.top.wrap) .empty {
   background: var(--paper);
   color: var(--navy);
 }
+
+.profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;padding-bottom:4rem}
+.profile-card{background:var(--navy-panel);border:1px solid var(--line);border-radius:1rem;padding:clamp(1.25rem,4vw,2.25rem)}
+.profile-card details{border-top:1px solid var(--line);padding:.8rem 0}
+.profile-card summary{color:var(--accent);cursor:pointer;font-weight:700}
+.profile-card details p{margin:.65rem 0 0}
+.skill-chips,.profile-actions,.project-filters:not([hidden]){display:flex;flex-wrap:wrap;gap:.65rem}
+.skill-chips{list-style:none;padding:0}
+.skill-chips li,.project-filters button{border:1px solid var(--line);border-radius:99px;padding:.45rem .85rem}
+.project-filters{margin-bottom:1.25rem}
+.project-filters button{font:inherit;min-height:44px;background:var(--navy-panel);color:#fff;cursor:pointer}
+.project-filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--navy)}
+.projects-page .project-card[hidden]{display:none}
+.projects-page .project-card{border-top:4px solid var(--accent)}
+.project-card .action-label{color:var(--accent);font-weight:700}
+main:has(.project-end) :is(.placeholder-panel,.operations-article,.case,.evidence-box,.original-artwork){
+  --muted:#d4deea;--teal:#ffad76;--line:#526b83;background:var(--navy-panel);color:#f7faff
+}
+main:has(.project-end) :is(.operations-article,.case,.evidence-box,.placeholder-panel,.original-artwork) :is(h2,h3,strong){color:inherit}
+@media(max-width:650px){.profile-grid{grid-template-columns:1fr}}
