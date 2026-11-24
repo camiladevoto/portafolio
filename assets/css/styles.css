@@ -99,3 +99,38 @@ h2 { font-weight: 750; }
   .hero { grid-template-columns: minmax(0, 1fr); }
   .focus-panel { margin-right: 7px; }
 }
+
+/* Full-screen introduction on the English and Spanish homepages. */
+.opening-screen {
+  min-height: calc(100vh - 85px);
+  min-height: calc(100svh - 85px);
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: clamp(1.75rem, 5vh, 3.75rem);
+  padding-block: clamp(2.5rem, 8vh, 6rem);
+}
+
+.opening-screen h1 {
+  max-width: 100%;
+  margin: 0;
+  font-size: clamp(2.8rem, 10.5vw, 9.5rem);
+  line-height: .98;
+  text-wrap: balance;
+}
+
+.opening-screen h1 em {
+  max-width: 100%;
+}
+
+.opening-link {
+  min-height: 44px;
+  border-bottom: 1px solid var(--teal);
+  color: var(--teal);
+}
+
+@media (max-width: 760px) {
+  .opening-screen h1 {
+    font-size: clamp(2.8rem, 12vw, 5.7rem);
+  }
+}
