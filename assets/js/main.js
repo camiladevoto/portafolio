@@ -32,3 +32,28 @@ if (projectsNav) {
 document.querySelectorAll('[data-year]').forEach((element) => {
   element.textContent = new Date().getFullYear();
 });
+
+const focusItems = [...document.querySelectorAll('.focus-section .focus-item')];
+if (focusItems.length) {
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const revealLine = () => window.innerHeight * 0.8;
+  // Use layout offsets so the sliding transform does not move its own trigger.
+  const refresh = () => {
+    const cutoff = window.scrollY + revealLine();
+    const panelTop = focusItems[0].offsetParent.getBoundingClientRect().top + window.scrollY;
+    focusItems.forEach(item => item.classList.toggle('is-pending', !motion.matches && panelTop + item.offsetTop > cutoff));
+  };
+  let scheduled = false;
+  const schedule = () => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => {
+      scheduled = false;
+      refresh();
+    });
+  };
+  window.addEventListener('scroll', schedule, { passive: true });
+  window.addEventListener('resize', schedule);
+  motion.addEventListener('change', schedule);
+  refresh();
+}
