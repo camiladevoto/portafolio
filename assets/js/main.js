@@ -31,6 +31,6 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
     });
   }, { threshold: 0.2 });
   document.querySelectorAll('.section-heading h2, .project-card h3, .evidence-section h2').forEach((heading) => {
-    if (heading.getBoundingClientRect().top >= window.innerHeight) reveal.observe(heading);
+    reveal.observe(heading);
   });
 }
