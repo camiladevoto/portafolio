@@ -397,3 +397,82 @@ body > .wrap > .hero .small { color: #e6edf5; }
   #toolsbyme a.project-card:is(:hover, :focus-visible) .diagonal-arrow { transform: translate(3px, -3px); }
   #toolsbyme a.project-card:focus-visible { transform: translateY(-4px); }
 }
+
+/* Navy is the page surface; paper panels frame long-form work. */
+body {
+  --deep-navy: #0b1b2d;
+  --navy-panel: #172f48;
+  --muted: #c3d1df;
+  --teal: #ff9b54;
+  --line: #405973;
+  background: var(--deep-navy);
+  color: #f7faff;
+}
+
+.site-header, .site-footer, .project-menu { background: var(--deep-navy); }
+.site-header { color: #f7faff; }
+.brand-name, #site-nav a { color: inherit; }
+.site-footer a:hover, #site-nav a:hover { color: var(--teal); }
+.opening-screen { box-shadow: 0 0 0 100vmax var(--deep-navy); }
+.page-hero, body > .wrap > .hero { border-bottom: 1px solid var(--line); }
+.work-section:not(#toolsbyme) { background: var(--deep-navy); }
+.project-card, .experience-history .timeline-card, .timeline-extra {
+  background: var(--navy-panel);
+  color: #f7faff;
+  border-color: var(--line);
+}
+.experience-history .timeline-organisation { color: #f7faff; }
+.experience-history .timeline-date { color: var(--accent); }
+.project-card:hover { border-color: var(--teal); }
+.project-card .status { background: #263f58; color: #ffd4b8; }
+.home-timeline .career-slide:nth-child(3n + 1) .timeline-card,
+.contact-band { background: var(--accent); color: var(--navy); }
+.home-timeline .career-slide:nth-child(3n + 1) .timeline-card .timeline-organisation,
+.contact-band .eyebrow, .contact-band p { color: var(--navy); }
+.home-credentials { color: var(--accent); }
+.location, .site-footer p { color: var(--muted); }
+.primary { background: var(--accent); color: var(--navy); }
+.primary:hover { background: #ffc49b; color: var(--navy); }
+.contact-band .primary { background: var(--navy); color: #fff; }
+.contact-band .primary:hover { background: #263f58; }
+.focus-section .focus-panel {
+  background: var(--navy-panel);
+  box-shadow: none;
+  border-color: var(--line);
+}
+.focus-section .focus-item { background: var(--deep-navy); border-color: var(--line); }
+
+main .placeholder-panel,
+main .operations-article,
+main .case,
+main .evidence-box,
+main .original-artwork {
+  --muted: #45566a;
+  --teal: #a23d13;
+  --line: #d6dfe8;
+  background: var(--paper);
+  color: var(--navy);
+  border-radius: 1rem;
+}
+main .operations-article, main .case, main .original-artwork {
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+main .operations-article p, main .case p, main .evidence-box p { color: var(--muted); }
+main .operations-article h2, main .case h2 { color: var(--navy); }
+main .placeholder-panel a:focus-visible, main .evidence-box a:focus-visible { outline-color: var(--teal); }
+
+/* JobMatch's portfolio-hosted prototype uses its own form styles. */
+body:has(.top.wrap) .top a,
+body:has(.top.wrap) main > .eyebrow { color: var(--accent); }
+body:has(.top.wrap) main > .lead,
+body:has(.top.wrap) footer .small { color: var(--muted); }
+body:has(.top.wrap) .panel,
+body:has(.top.wrap) .job,
+body:has(.top.wrap) .notice,
+body:has(.top.wrap) .empty {
+  --muted: #45566a;
+  --teal: #a23d13;
+  border-color: #d6dfe8;
+  background: var(--paper);
+  color: var(--navy);
+}
